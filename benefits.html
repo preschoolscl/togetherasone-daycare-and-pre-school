@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Benefits | Together As One</title>
+   <link rel="icon" type="image/png" href="gallery/logo.png">
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="bg-gradient-to-br from-green-100 via-blue-100 to-purple-100 font-sans text-gray-800">
+
+  <!-- Navbar -->
+  <header class="bg-blue-600 text-white shadow-lg fixed top-0 left-0 w-full z-50">
+    <div class="container mx-auto flex justify-between items-center p-4">
+      <!-- Logo -->
+      <div class="flex items-center space-x-3">
+        <img src="gallery/logo.png" alt="Together As One Logo" class="w-12 h-12 rounded-full shadow-lg border-2 border-white">
+        <h1 class="text-2xl font-bold">Together As One</h1>
+      </div>
+      <!-- Nav -->
+      <nav class="hidden md:flex space-x-6">
+        <a href="index.html" class="hover:text-yellow-300">Home</a>
+        <a href="gallery.html" class="hover:text-yellow-300">Gallery</a>
+        <a href="benefits.html" class="hover:text-yellow-300">Benefits</a>
+        <a href="index.html#application" class="hover:text-yellow-300">Apply</a>
+        <a href="index.html#contact" class="hover:text-yellow-300">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="h-72 flex items-center justify-center text-center relative overflow-hidden">
+    <img src="gallery/hero2.jpg" class="absolute inset-0 w-full h-full object-cover opacity-60" alt="Hero">
+    <div class="relative z-10 text-white">
+      <h1 class="text-5xl md:text-6xl font-extrabold drop-shadow-lg">Our Benefits 🌟</h1>
+      <p class="mt-3 text-xl">Learning through play, discovery, and love</p>
+    </div>
+  </section>
+
+  <!-- Benefits Section -->
+  <section class="container mx-auto py-20 px-6 grid md:grid-cols-3 gap-10 text-center">
+    
+    <div class="bg-white p-8 rounded-2xl shadow-lg hover:scale-105 transition">
+      <i class="fas fa-drum text-pink-500 text-5xl mb-4"></i>
+      <h3 class="text-xl font-bold mb-2">Cultural Activities</h3>
+      <p>We celebrate diversity through music, dance, and cultural appreciation.</p>
+    </div>
+
+    <div class="bg-white p-8 rounded-2xl shadow-lg hover:scale-105 transition">
+      <i class="fas fa-puzzle-piece text-green-500 text-5xl mb-4"></i>
+      <h3 class="text-xl font-bold mb-2">Sensorial Activities</h3>
+      <p>Hands-on learning with textures, sounds, and visuals that sharpen senses.</p>
+    </div>
+
+    <div class="bg-white p-8 rounded-2xl shadow-lg hover:scale-105 transition">
+      <i class="fas fa-comments text-yellow-500 text-5xl mb-4"></i>
+      <h3 class="text-xl font-bold mb-2">Language Activities</h3>
+      <p>Through stories, songs, and conversations, children build strong communication skills.</p>
+    </div>
+
+    <div class="bg-white p-8 rounded-2xl shadow-lg hover:scale-105 transition">
+      <i class="fas fa-hands-helping text-purple-500 text-5xl mb-4"></i>
+      <h3 class="text-xl font-bold mb-2">Practical Life Skills</h3>
+      <p>We guide children in independence, responsibility, and everyday tasks.</p>
+    </div>
+
+    <div class="bg-white p-8 rounded-2xl shadow-lg hover:scale-105 transition">
+      <i class="fas fa-calculator text-blue-500 text-5xl mb-4"></i>
+      <h3 class="text-xl font-bold mb-2">Math Activities</h3>
+      <p>Numbers, patterns, and shapes are introduced through fun games and challenges.</p>
+    </div>
+
+    <div class="bg-white p-8 rounded-2xl shadow-lg hover:scale-105 transition">
+      <i class="fas fa-smile-beam text-pink-600 text-5xl mb-4"></i>
+      <h3 class="text-xl font-bold mb-2">Fun Environment</h3>
+      <p>A playful, safe, and exciting learning space where kids feel happy and confident.</p>
+    </div>
+
+  </section>
+
+  <!-- Meals Section -->
+  <section class="bg-pink-100 py-16 px-6 text-center">
+    <h2 class="text-3xl font-bold text-pink-600 mb-4">🍎 Nutritious Meals Included</h2>
+    <p class="max-w-2xl mx-auto text-lg">Healthy food = healthy minds. Our children enjoy balanced meals every day to keep them energized and ready to learn!</p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-blue-600 text-white py-8 mt-10">
+    <div class="container mx-auto text-center space-y-4">
+      <p class="font-semibold">© 2025 Together As One</p>
+      <p> 4307 Luvuyo Street, Phumula Gardens Ext 21, Germiston, 14</p>
+      <div class="flex justify-center space-x-6">
+        <a href="https://www.facebook.com/share/" target="_blank">Facebook</a>
+        <a href="https://www.tiktok.com/" target="_blank">TikTok</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/" class="fixed bottom-6 right-6 bg-green-500 text-white p-4 rounded-full shadow-lg hover:scale-110 transition" target="_blank">
+    <i class="fab fa-whatsapp text-2xl"></i>
+  </a>
+    <script>
+    // Mobile menu toggle
+    const menuBtn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+      gsap.fromTo(mobileMenu, {y: -20, opacity: 0}, {y: 0, opacity: 1, duration: 0.4});
+    });
+  </script>
+</body>
+</html>
