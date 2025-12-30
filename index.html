@@ -364,8 +364,19 @@
       gsap.fromTo(mobileMenu, {y: -20, opacity: 0}, {y: 0, opacity: 1, duration: 0.4});
     });
   </script>
+  <script defer>
+  function toggleRules() {
+    const box = document.getElementById("rulesBox");
+    const icon = document.getElementById("rulesIcon");
+
+    box.classList.toggle("hidden");
+    icon.textContent = box.classList.contains("hidden") ? "+" : "−";
+  }
+</script>
+
 </body>
 </html>
+
 
 
 
