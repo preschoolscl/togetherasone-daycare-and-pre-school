@@ -144,19 +144,25 @@
     <p class="mt-8 text-xl font-semibold text-pink-600">🍎 Nutritious Meals Included!</p>
   </section>
 
- <!-- Admission Form -->
+<!-- Admission Form -->
 <form
   action="https://api.web3forms.com/submit"
   method="POST"
   enctype="multipart/form-data"
   class="space-y-5"
 >
+
   <!-- Web3Forms Access Key -->
   <input type="hidden" name="access_key" value="d91c0b76-0b1a-4f84-8819-39fd60e2af8c">
-
-  <!-- Optional settings -->
   <input type="hidden" name="subject" value="New Admission Form Submission">
   <input type="hidden" name="from_name" value="Day Care Admission Form">
+
+  <!-- Stored Consent Text (for legal record) -->
+  <input type="hidden" name="consent_rules_text"
+    value="I have read, understood, and agree to the school rules, regulations, payment terms, and the full-year contract.">
+
+  <input type="hidden" name="consent_declaration_text"
+    value="I hereby declare that all the information provided is true and correct and I consent to my child being enrolled at the school.">
 
   <section id="application" class="bg-white py-16 px-6 shadow-inner">
     <div class="container mx-auto max-w-3xl bg-blue-100 p-8 rounded-2xl shadow-xl space-y-6">
@@ -165,20 +171,20 @@
         Admission Form
       </h3>
 
-      <!-- ✅ CHANGED FROM <form> TO <div> -->
+      <!-- CONTENT WRAPPER (NOT A FORM) -->
       <div class="space-y-5">
 
         <!-- Child Information -->
         <h4 class="text-lg font-semibold text-gray-700">Child Information</h4>
 
-        <input type="text" name="child_name" placeholder="Child’s Full Name"
+        <input type="text" name="child_name" required placeholder="Child’s Full Name"
           class="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:ring-pink-300">
 
-        <textarea name="home_address" placeholder="Home Address"
+        <textarea name="home_address" required placeholder="Home Address"
           class="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:ring-pink-300"></textarea>
 
         <div class="grid md:grid-cols-2 gap-4">
-          <input type="date" name="dob"
+          <input type="date" name="dob" required
             class="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:ring-green-300">
 
           <input type="text" name="allergies" placeholder="Allergies (None if not applicable)"
@@ -193,17 +199,17 @@
           Parent / Guardian Information
         </h4>
 
-        <input type="text" name="parent_name" placeholder="Parent / Guardian Full Name"
+        <input type="text" name="parent_name" required placeholder="Parent / Guardian Full Name"
           class="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:ring-pink-300">
 
-        <textarea name="parent_address" placeholder="Parent / Guardian Address"
+        <textarea name="parent_address" required placeholder="Parent / Guardian Address"
           class="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:ring-pink-300"></textarea>
 
         <div class="grid md:grid-cols-2 gap-4">
-          <input type="text" name="relationship" placeholder="Relationship to Child"
+          <input type="text" name="relationship" required placeholder="Relationship to Child"
             class="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:ring-yellow-300">
 
-          <input type="tel" name="contact_number" placeholder="Contact Number"
+          <input type="tel" name="contact_number" required placeholder="Contact Number"
             class="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:ring-yellow-300">
         </div>
 
@@ -226,58 +232,89 @@
           class="hidden mt-4 bg-white p-5 rounded-xl shadow-inner text-sm space-y-4 max-h-96 overflow-y-auto"
         >
 
-          <!-- Operating Hours & Fees -->
           <div>
-            <h5 class="font-semibold text-gray-800 mb-1">Operating Hours & Fees</h5>
+            <h5 class="font-semibold">Operating Hours & Fees</h5>
             <ul class="list-disc list-inside space-y-1">
               <li>School hours: 06H00 – 16H30 (Monday – Friday)</li>
               <li>Late collection after 17H00: R50 per day</li>
-              <li>School fees: R700.00 per month (all ages)</li>
-              <li>Registration fee: R200 (once-off, compulsory)</li>
+              <li>School fees: R700.00 per month</li>
+              <li>Registration fee: R200 (once-off)</li>
               <li>Toiletry fee: R250 annually</li>
               <li>Fees payable from the 1st and no later than the 7th</li>
               <li>Late payment penalty: R50 after the 7th</li>
               <li>December / graduation fees payable from July</li>
-              <li>School fees payable even during school holidays</li>
+              <li>Fees payable during school holidays</li>
             </ul>
           </div>
 
-          <!-- Banking Details -->
           <div>
-            <h5 class="font-semibold text-gray-800 mb-1">Banking Details</h5>
-            <ul class="space-y-1">
+            <h5 class="font-semibold">Banking Details</h5>
+            <ul>
               <li><strong>Account Name:</strong> Together As One Day Care & Pre-school</li>
               <li><strong>Bank:</strong> Nedbank</li>
               <li><strong>Branch Code:</strong> 190442</li>
               <li><strong>Account Number:</strong> 1104808021</li>
-              <li><strong>Reference:</strong> Name & Surname of Child</li>
+              <li><strong>Reference:</strong> Child Name & Surname</li>
             </ul>
-            <p class="mt-2 text-red-600 font-semibold">
-              PS: The school no longer accepts cash payments
+            <p class="text-red-600 font-semibold mt-2">
+              No cash payments accepted
             </p>
           </div>
 
-          <!-- School Rules -->
           <div>
-            <h5 class="font-semibold text-gray-800 mb-1">School Rules</h5>
+            <h5 class="font-semibold">School Rules</h5>
             <ul class="list-disc list-inside space-y-1">
-              <li>School uniform is COMPULSORY (Monday – Friday & school trips)</li>
-              <li>Sick children must not be brought to school</li>
-              <li>Parents must inform teachers or the principal of contagious infections</li>
-              <li>All children must participate in school trips & fundraising events</li>
-              <li>Trip fees are payable whether the child attends or not</li>
-              <li>Parents attendance at meetings is COMPULSORY</li>
-              <li>All clothing and shoes must be clearly marked</li>
-              <li>Teachers are not responsible for lost items</li>
-              <li>No termination notice accepted during September – November</li>
-              <li>Two months written notice required before child withdrawal</li>
+              <li>School uniform is compulsory</li>
+              <li>Sick children must not attend</li>
+              <li>Parents must report contagious infections</li>
+              <li>Trips and fundraising participation is compulsory</li>
+              <li>Trip fees payable whether attending or not</li>
+              <li>Parents must attend meetings</li>
+              <li>Label all clothing</li>
+              <li>Teachers not responsible for lost items</li>
+              <li>No termination notices September–November</li>
+              <li>Two months written notice required</li>
             </ul>
           </div>
 
         </div>
 
-        <button type="submit"
-          class="w-full py-3 bg-pink-500 text-white font-bold rounded-lg shadow-md hover:bg-pink-600 transition">
+        <!-- Consents -->
+        <div class="bg-white p-4 rounded-xl shadow-inner space-y-3">
+
+          <label class="flex items-start space-x-3 text-sm">
+            <input type="checkbox" id="consentMain" onclick="checkAgreements()" required>
+            <span>
+              I declare that all information provided is true and correct and I consent
+              to my child being enrolled at the school.
+            </span>
+          </label>
+
+          <label class="flex items-start space-x-3 text-sm">
+            <input type="checkbox" id="consentRules" onclick="handleRulesConsent()" required>
+            <span>
+              I have read, understood, and agree to the school rules, regulations,
+              payment terms, and full-year contract.
+            </span>
+          </label>
+
+        </div>
+
+        <!-- Legal Signature -->
+        <input
+          type="text"
+          name="declaration_name"
+          required
+          placeholder="Parent / Guardian Full Name (Digital Signature)"
+          class="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:ring-pink-300">
+
+        <!-- Submit -->
+        <button
+          type="submit"
+          id="submitBtn"
+          disabled
+          class="w-full py-3 bg-gray-400 text-white font-bold rounded-lg shadow-md cursor-not-allowed"
+        >
           Submit Admission Form
         </button>
 
@@ -285,20 +322,6 @@
     </div>
   </section>
 </form>
-
-<!---<script>
-  function toggleRules() {
-    const box = document.getElementById("rulesBox");
-    const icon = document.getElementById("rulesIcon");
-
-    box.classList.toggle("hidden");
-    icon.textContent = box.classList.contains("hidden") ? "+" : "−";
-  }
-</script>
---->
-  </div>
-</section>
-
 
   <!-- Map & Contact -->
   <section id="contact" class="py-16">
@@ -336,6 +359,83 @@
     <i class="fab fa-whatsapp"></i>
   </a>
 
+<script>
+  function toggleRules() {
+    const box = document.getElementById("rulesBox");
+    const icon = document.getElementById("rulesIcon");
+    box.classList.toggle("hidden");
+    icon.textContent = box.classList.contains("hidden") ? "+" : "−";
+  }
+
+  function checkAgreements() {
+    const main = document.getElementById("consentMain").checked;
+    const rules = document.getElementById("consentRules").checked;
+    const btn = document.getElementById("submitBtn");
+
+    if (main && rules) {
+      btn.disabled = false;
+      btn.classList.remove("bg-gray-400", "cursor-not-allowed");
+      btn.classList.add("bg-pink-500", "hover:bg-pink-600");
+    } else {
+      btn.disabled = true;
+      btn.classList.add("bg-gray-400", "cursor-not-allowed");
+      btn.classList.remove("bg-pink-500", "hover:bg-pink-600");
+    }
+  }
+
+  function handleRulesConsent() {
+    const box = document.getElementById("rulesBox");
+    const icon = document.getElementById("rulesIcon");
+
+    if (box.classList.contains("hidden")) {
+      box.classList.remove("hidden");
+      icon.textContent = "−";
+      box.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+    checkAgreements();
+  }
+</script>
+
+
+  <!-- Map & Contact -->
+  <!----
+<section id="contact" class="py-16">
+    <h3 class="text-3xl text-center font-bold text-blue-700 mb-6">Find Us Here</h3>
+    <div class="container mx-auto max-w-4xl text-center space-y-4 mb-6">
+      <p class="text-lg">📍 4307 Luvuyo Street, Phumula Gardens Ext 21, Germiston, 1401</p>
+      <p class="text-lg">📞  076 023 7589 / 071 007 1224</p>
+      <p class="text-lg">📧 togetherasone566@gmail.com</p>
+    </div>
+    <div class="container mx-auto max-w-4xl">
+     <iframe
+  class="w-full h-96 rounded-xl shadow-lg"
+  loading="lazy"
+  allowfullscreen
+  referrerpolicy="no-referrer-when-downgrade"
+  src="https://www.google.com/maps?q=4307%20Luvuyo%20Street,%20Phumula%20Gardens%20Ext%2021,%20Germiston,%201401&output=embed">
+</iframe>
+
+    </div>
+  </section>
+--->
+ <!-- Footer -->
+  <!--
+  <footer class="bg-blue-600 text-white py-8 mt-10">
+    <div class="container mx-auto text-center space-y-4">
+      <p class="font-semibold">© 2025 Together As One</p>
+      <p>4307 Luvuyo Street, Phumula Gardens Ext 21, Germiston, 1401</p>
+      <div class="flex justify-center space-x-6">
+        <a href="https://www.facebook.com/share" target="_blank">Facebook</a>
+        <a href="https://www.tiktok.com/" target="_blank">TikTok</a>
+      </div>
+  </footer>
+--->
+  <!-- Floating WhatsApp -->
+  <!--
+  <a href="https://wa.me/076 023 7589" class="whatsapp-float" target="_blank">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  --->
   <!-- GSAP & Menu Script -->
   <script>
     // Mobile menu toggle
@@ -358,6 +458,7 @@
 
 </body>
 </html>
+
 
 
 
