@@ -145,175 +145,157 @@
   </section>
 
  <!-- Admission Form -->
-<section id="application" class="bg-white py-16 px-6 shadow-inner">
-  <div class="container mx-auto max-w-3xl bg-blue-100 p-8 rounded-2xl shadow-xl space-y-6">
-
-    <h3 class="text-3xl font-bold text-center text-pink-500">
-      Admission Form
-    </h3>
-
-    <form class="space-y-5">
-
-      <!-- Child Information -->
-      <h4 class="text-lg font-semibold text-gray-700">Child Information</h4>
-
-      <input type="text" name="child_name" placeholder="Child’s Full Name"
-        class="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:ring-pink-300">
-
-      <textarea name="home_address" placeholder="Home Address"
-        class="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:ring-pink-300"></textarea>
-
-      <div class="grid md:grid-cols-2 gap-4">
-        <input type="date" name="dob"
-          class="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:ring-green-300">
-
-        <input type="text" name="allergies" placeholder="Allergies (None if not applicable)"
-          class="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:ring-green-300">
-      </div>
-
-      <input type="text" name="medical_problems" placeholder="Medical Problems (None if applicable)"
-        class="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:ring-red-300">
-
-      <!-- Parent / Guardian -->
-      <h4 class="text-lg font-semibold text-gray-700 mt-6">
-        Parent / Guardian Information
-      </h4>
-
-      <input type="text" name="parent_name" placeholder="Parent / Guardian Full Name"
-        class="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:ring-pink-300">
-
-      <textarea name="parent_address" placeholder="Parent / Guardian Address"
-        class="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:ring-pink-300"></textarea>
-
-      <div class="grid md:grid-cols-2 gap-4">
-        <input type="text" name="relationship" placeholder="Relationship to Child"
-          class="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:ring-yellow-300">
-
-        <input type="tel" name="contact_number" placeholder="Contact Number"
-          class="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:ring-yellow-300">
-      </div>
-
-      <p class="text-sm text-gray-600 bg-white p-3 rounded-lg shadow-inner">
-        <strong>NB:</strong> Please attach a copy of the child’s Birth Certificate & Clinic Card,
-        and an ID copy of the parent/guardian liable for payment.
-      </p>
-
-      <!-- Emergency Contact -->
-      <h4 class="text-lg font-semibold text-gray-700 mt-6">
-        Emergency Contact
-      </h4>
-
-      <input type="text" name="emergency_name" placeholder="Emergency Contact Name"
-        class="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:ring-yellow-300">
-
-      <textarea name="emergency_address" placeholder="Emergency Contact Address"
-        class="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:ring-yellow-300"></textarea>
-
-      <div class="grid md:grid-cols-2 gap-4">
-        <input type="text" name="emergency_relationship" placeholder="Relationship"
-          class="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:ring-yellow-300">
-
-        <input type="tel" name="emergency_phone" placeholder="Telephone / Cell"
-          class="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:ring-yellow-300">
-      </div>
-
-      <input type="text" name="doctor_name" placeholder="Doctor’s Name"
-        class="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:ring-red-300">
-
-      <input type="tel" name="doctor_phone" placeholder="Doctor’s Contact Number"
-        class="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:ring-red-300">
-
-    <!-- Rules & Regulations -->
-<h4 class="text-lg font-semibold text-gray-700 mt-6">
-  Rules & Regulations
-</h4>
-
-<button
-  type="button"
-  onclick="toggleRules()"
-  class="w-full flex justify-between items-center bg-gray-800 text-white px-4 py-3 rounded-lg shadow-md"
+<form
+  action="https://api.web3forms.com/submit"
+  method="POST"
+  enctype="multipart/form-data"
+  class="space-y-5"
 >
-  View School Rules & Banking Details
-  <span id="rulesIcon">+</span>
-</button>
+  <!-- Web3Forms Access Key -->
+  <input type="hidden" name="access_key" value="d91c0b76-0b1a-4f84-8819-39fd60e2af8c">
 
-<div
-  id="rulesBox"
-  class="hidden mt-4 bg-white p-5 rounded-xl shadow-inner text-sm space-y-4 max-h-96 overflow-y-auto"
->
+  <!-- Optional settings -->
+  <input type="hidden" name="subject" value="New Admission Form Submission">
+  <input type="hidden" name="from_name" value="Day Care Admission Form">
 
-  <!-- Operating Hours & Fees -->
-  <div>
-    <h5 class="font-semibold text-gray-800 mb-1">Operating Hours & Fees</h5>
-    <ul class="list-disc list-inside space-y-1">
-      <li>School hours: 06H00 – 16H30 (Monday – Friday)</li>
-      <li>Late collection after 17H00: R50 per day</li>
-      <li>School fees: R700.00 per month (all ages)</li>
-      <li>Registration fee: R200 (once-off, compulsory)</li>
-      <li>Toiletry fee: R250 annually</li>
-      <li>Fees payable from the 1st and no later than the 7th</li>
-      <li>Late fee penalty: R50 after the 7th</li>
-      <li>December / graduation fees payable from July</li>
-      <li>School fees payable even during school holidays</li>
-    </ul>
-  </div>
+  <section id="application" class="bg-white py-16 px-6 shadow-inner">
+    <div class="container mx-auto max-w-3xl bg-blue-100 p-8 rounded-2xl shadow-xl space-y-6">
 
-  <!-- Banking Details -->
-  <div>
-    <h5 class="font-semibold text-gray-800 mb-1">Banking Details</h5>
-    <ul class="space-y-1">
-      <li><strong>Account Name:</strong> Together As One Day Care & Pre-school</li>
-      <li><strong>Bank:</strong> Nedbank</li>
-      <li><strong>Branch Code:</strong> 190442</li>
-      <li><strong>Account Number:</strong> 1104808021</li>
-      <li><strong>Reference:</strong> Name & Surname of Child</li>
-    </ul>
+      <h3 class="text-3xl font-bold text-center text-pink-500">
+        Admission Form
+      </h3>
 
-    <p class="mt-2 text-red-600 font-semibold">
-      PS: The school no longer accepts cash payments
-    </p>
-  </div>
+      <!-- ✅ CHANGED FROM <form> TO <div> -->
+      <div class="space-y-5">
 
-  <!-- School Rules -->
-  <div>
-    <h5 class="font-semibold text-gray-800 mb-1">School Rules</h5>
-    <ul class="list-disc list-inside space-y-1">
-      <li>School uniform is COMPULSORY (Monday – Friday & school trips)</li>
-      <li>Sick children must not be brought to school</li>
-      <li>Parents must inform teachers or the principal of contagious infections</li>
-      <li>All children must participate in school trips & fundraising events</li>
-      <li>Trip fees are payable whether the child attends or not</li>
-      <li>Parents attendance at meetings is COMPULSORY</li>
-      <li>All clothing and shoes must be clearly marked</li>
-      <li>Teachers are not responsible for lost items</li>
-      <li>No termination notice accepted during September – November</li>
-      <li>Two months written notice required before child withdrawal</li>
-    </ul>
-  </div>
+        <!-- Child Information -->
+        <h4 class="text-lg font-semibold text-gray-700">Child Information</h4>
 
-</div>
-
-
-      <input type="text" name="declaration_name" placeholder="Parent / Guardian Name"
-        class="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:ring-pink-300">
-
-      <div class="grid md:grid-cols-2 gap-4">
-        <input type="text" name="signature" placeholder="Signature"
+        <input type="text" name="child_name" placeholder="Child’s Full Name"
           class="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:ring-pink-300">
 
-        <input type="date" name="date_signed"
+        <textarea name="home_address" placeholder="Home Address"
+          class="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:ring-pink-300"></textarea>
+
+        <div class="grid md:grid-cols-2 gap-4">
+          <input type="date" name="dob"
+            class="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:ring-green-300">
+
+          <input type="text" name="allergies" placeholder="Allergies (None if not applicable)"
+            class="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:ring-green-300">
+        </div>
+
+        <input type="text" name="medical_problems" placeholder="Medical Problems (None if applicable)"
+          class="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:ring-red-300">
+
+        <!-- Parent / Guardian -->
+        <h4 class="text-lg font-semibold text-gray-700 mt-6">
+          Parent / Guardian Information
+        </h4>
+
+        <input type="text" name="parent_name" placeholder="Parent / Guardian Full Name"
           class="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:ring-pink-300">
+
+        <textarea name="parent_address" placeholder="Parent / Guardian Address"
+          class="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:ring-pink-300"></textarea>
+
+        <div class="grid md:grid-cols-2 gap-4">
+          <input type="text" name="relationship" placeholder="Relationship to Child"
+            class="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:ring-yellow-300">
+
+          <input type="tel" name="contact_number" placeholder="Contact Number"
+            class="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:ring-yellow-300">
+        </div>
+
+        <!-- Rules -->
+        <h4 class="text-lg font-semibold text-gray-700 mt-6">
+          Rules & Regulations
+        </h4>
+
+        <button
+          type="button"
+          onclick="toggleRules()"
+          class="w-full flex justify-between items-center bg-gray-800 text-white px-4 py-3 rounded-lg shadow-md"
+        >
+          View School Rules & Banking Details
+          <span id="rulesIcon">+</span>
+        </button>
+
+        <div
+          id="rulesBox"
+          class="hidden mt-4 bg-white p-5 rounded-xl shadow-inner text-sm space-y-4 max-h-96 overflow-y-auto"
+        >
+
+          <!-- Operating Hours & Fees -->
+          <div>
+            <h5 class="font-semibold text-gray-800 mb-1">Operating Hours & Fees</h5>
+            <ul class="list-disc list-inside space-y-1">
+              <li>School hours: 06H00 – 16H30 (Monday – Friday)</li>
+              <li>Late collection after 17H00: R50 per day</li>
+              <li>School fees: R700.00 per month (all ages)</li>
+              <li>Registration fee: R200 (once-off, compulsory)</li>
+              <li>Toiletry fee: R250 annually</li>
+              <li>Fees payable from the 1st and no later than the 7th</li>
+              <li>Late payment penalty: R50 after the 7th</li>
+              <li>December / graduation fees payable from July</li>
+              <li>School fees payable even during school holidays</li>
+            </ul>
+          </div>
+
+          <!-- Banking Details -->
+          <div>
+            <h5 class="font-semibold text-gray-800 mb-1">Banking Details</h5>
+            <ul class="space-y-1">
+              <li><strong>Account Name:</strong> Together As One Day Care & Pre-school</li>
+              <li><strong>Bank:</strong> Nedbank</li>
+              <li><strong>Branch Code:</strong> 190442</li>
+              <li><strong>Account Number:</strong> 1104808021</li>
+              <li><strong>Reference:</strong> Name & Surname of Child</li>
+            </ul>
+            <p class="mt-2 text-red-600 font-semibold">
+              PS: The school no longer accepts cash payments
+            </p>
+          </div>
+
+          <!-- School Rules -->
+          <div>
+            <h5 class="font-semibold text-gray-800 mb-1">School Rules</h5>
+            <ul class="list-disc list-inside space-y-1">
+              <li>School uniform is COMPULSORY (Monday – Friday & school trips)</li>
+              <li>Sick children must not be brought to school</li>
+              <li>Parents must inform teachers or the principal of contagious infections</li>
+              <li>All children must participate in school trips & fundraising events</li>
+              <li>Trip fees are payable whether the child attends or not</li>
+              <li>Parents attendance at meetings is COMPULSORY</li>
+              <li>All clothing and shoes must be clearly marked</li>
+              <li>Teachers are not responsible for lost items</li>
+              <li>No termination notice accepted during September – November</li>
+              <li>Two months written notice required before child withdrawal</li>
+            </ul>
+          </div>
+
+        </div>
+
+        <button type="submit"
+          class="w-full py-3 bg-pink-500 text-white font-bold rounded-lg shadow-md hover:bg-pink-600 transition">
+          Submit Admission Form
+        </button>
+
       </div>
+    </div>
+  </section>
+</form>
 
-      <button type="submit"
-        class="w-full py-3 bg-pink-500 text-white font-bold rounded-lg shadow-md hover:bg-pink-600 transition">
-        Submit Admission Form
-      </button>
+<!---<script>
+  function toggleRules() {
+    const box = document.getElementById("rulesBox");
+    const icon = document.getElementById("rulesIcon");
 
-    </form>
-  </div>
-</section>
-
+    box.classList.toggle("hidden");
+    icon.textContent = box.classList.contains("hidden") ? "+" : "−";
+  }
+</script>
+--->
   </div>
 </section>
 
@@ -376,6 +358,7 @@
 
 </body>
 </html>
+
 
 
 
