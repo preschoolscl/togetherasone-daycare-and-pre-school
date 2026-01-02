@@ -193,6 +193,38 @@
 
         <input type="text" name="medical_problems" placeholder="Medical Problems (None if applicable)"
           class="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:ring-red-300">
+<div class="grid md:grid-cols-2 gap-4">
+  <select name="child_gender" required
+    class="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:ring-pink-300">
+    <option value="">Select Gender</option>
+    <option>Male</option>
+    <option>Female</option>
+    <option>Other</option>
+  </select>
+
+  <select name="class_group" required
+    class="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:ring-green-300">
+    <option value="">Age Group / Class</option>
+    <option>Baby Class</option>
+    <option>Toddler Class</option>
+    <option>Pre-School</option>
+    <option>Grade R</option>
+  </select>
+</div>
+<div class="grid md:grid-cols-2 gap-4">
+  <input type="text" name="home_language" placeholder="Language Spoken at Home"
+    class="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:ring-yellow-300">
+
+  <input type="text" name="nationality" placeholder="Nationality"
+    class="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:ring-yellow-300">
+</div>
+<div class="grid md:grid-cols-2 gap-4">
+  <input type="text" name="previous_school" placeholder="Previous School / Crèche (if any)"
+    class="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:ring-blue-300">
+
+  <input type="date" name="start_date"
+    class="w-full px-4 py-2 rounded-lg border focus:ring-2 focus:ring-blue-300">
+</div>
 
         <!-- Parent / Guardian -->
         <h4 class="text-lg font-semibold text-gray-700 mt-6">
@@ -281,6 +313,16 @@
 
         <!-- Consents -->
         <div class="bg-white p-4 rounded-xl shadow-inner space-y-3">
+<label class="flex items-start gap-2 text-sm text-gray-700">
+  <input type="checkbox" name="emergency_medical_consent" required class="mt-1">
+  I give permission for emergency medical treatment if the parent/guardian
+  cannot be reached.
+</label>
+
+<label class="flex items-start gap-2 text-sm text-gray-700 mt-2">
+  <input type="checkbox" name="photo_consent" class="mt-1">
+  I give permission for photographs of my child to be used for school purposes.
+</label>
 
           <label class="flex items-start space-x-3 text-sm">
             <input type="checkbox" id="consentMain" onclick="checkAgreements()" required>
@@ -458,6 +500,7 @@
 
 </body>
 </html>
+
 
 
 
